@@ -1,4 +1,4 @@
-# Chat app
+# Chat App
 
 <br>
 <div style="text-align:center">
@@ -7,11 +7,11 @@
 </div>
 <br>
 
-## Функционал сайта
+## Website functionality
 
-Этот сайт представляет из себя простое приложение - чат для переписок.
+This site is a simple chat application.
 
-На сайте реализована регистрация и авторизация
+On the site you can correspond with users, registration and authorization are also implemented.
 
 <br>
 <div style="text-align:center">
@@ -19,36 +19,36 @@
 </div>
 <br>
 
-## Основные страницы сайта
+## Main site pages
 
-- Главная страница по адресу `/main`
-- Все пользователи по адресу `/main/users`
-- Страница регистрации `/auth/sign_up`
-- Страница входа `/auth/login`
+- Main page at `/main`
+- All users at `/main/users`
+- Registration page `/auth/sign_up`
+- Login page `/auth/login`
 
-## Технологии использованные при разработке сайта
+## Technologies used in the development of the site
 
-#### Для frontend части были использованы следующие фреймворки и технологии
+#### The following frameworks and technologies were used for the frontend part
 - HTML/CSS/JS
 - Bootstrap
 
-Сайт является адаптивным и доступен для комфортного просмотра на устройствах с разными размерами экранов.
+The site is responsive and is available for comfortable viewing on devices with different screen sizes.
 
-#### Для backend части были использованы следующие фреймворки и технологии
+#### The following frameworks and technologies were used for the backend part
 - Node.js
-- Express.js
+- express.js
 - MongoDB
 
-#### Общение между пользователями реализованно при помощи постоянного соединения (WebSocket)
+#### Communication between users is implemented using a persistent connection (WebSocket)
 - SocketIO
 
 
-## Запуск приложения
+## Run application
 
-Для того чтобы запустить приложение клонируйте репозиторий при помощи `git clone`. 
+Clone the repository with `git clone` to run the application.
 
-Далее вы должны создать базу данных mongoDB Для подключения к БД как и для формирования JWT используются переменные окружения, вы можете определить их в файле `.env` или задать эти параметры напрямую.
+Next, you must create the mongoDB database. To connect to the database, as well as to form the JWT, environment variables are used, you can define them in the `.env` file or set these parameters directly.
 
-Для загрузки всех пакетов и модулей используйте команду `npm init`.
+Use the `npm init` command to download all packages and modules.
 
-Запуск сервера происходит командой `npm start` или `npm dev` для запуска с пакетом `nodemon`.
+The server is started with the `npm start` command or `npm dev` to start with the `nodemon` package.
