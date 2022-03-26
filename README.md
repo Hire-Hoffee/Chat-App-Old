@@ -6,7 +6,7 @@
 
 <br>
 <div style="text-align:center">
-  <img src="./images_readme/main_page.png" width="1000"/>
+  <img src="./images_readme/chat_page.png" width="1000"/>
   <img src="./images_readme/all_users.png" width="1000"/>
 </div>
 <br>
