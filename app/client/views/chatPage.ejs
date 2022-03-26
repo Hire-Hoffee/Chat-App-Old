@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/styles/style.css">
   <script defer type="module" src="/javascript/axios.js"></script>
   <script defer type="module" src="/javascript/socket.js"></script>
-  <title>Test Page</title>
+  <title>Мессенджер</title>
 </head>
 
 <body>
@@ -50,10 +50,10 @@
             <a class="a_chat_link" data-bs-dismiss="offcanvas" href="/main?room_with=<%= usersList[i].user_name %>">
               <div class="card mt-2 mb-2 border-success bg-dark" style="max-width: 540px;">
                 <div class="row g-0">
-                  <div class="col-md-4 d-flex justify-content-center align-items-center">
+                  <div class="col-md-4 col-4 d-flex justify-content-center align-items-center">
                     <img src="/images/usersAvatars/<%= usersList[i].user_avatar %>" class="img-fluid rounded-circle users_avatar" alt="users_avatar">
                   </div>
-                  <div class="col-md-8 d-flex justify-content-center align-items-center">
+                  <div class="col-md-8 col-8 d-flex justify-content-center align-items-center">
                     <div class="card-body">
                       <h5 class="card-title">
                         <div class="user_block">
@@ -78,7 +78,7 @@
   <div class="wrapper">
     <%- include('partials/header'); -%>
 
-    <div class="container-fluid bg-dark mt-3 mb-2">
+    <div class="container-fluid bg-dark mt-4 mb-2">
       <div class="row d-flex justify-content-around p-3">
 
         <div class="col-xl-3 col-lg-4 bg-light overflow-auto rounded-3 users_list users_list_hidden">
@@ -116,34 +116,31 @@
           
         </div>
   
-        <div class="col-xl-8 col-lg-7 col-11 bg-light rounded-3 chat_part">
+        <div class="col-xl-8 col-lg-7 col-12 bg-light rounded-3 chat_part">
           <div class="row">
-            <div class="col-12 overflow-auto msgs_list">
-              <span id="change_msgs">
-
+            <div id="msgs_list" class="col-12 overflow-auto msgs_list">
+              <myAjax id="change_msgs">
+                
                 <% for( let i=0; i < msgs.length; i++ ) { %>
-                  <div class="msgs p-2 m-4 rounded-3 d-flex flex-column">
-                    <div class="row bg-dark text-success p-1 mb-1 rounded-3">
+                  <div class="msgs m-3 rounded-3 d-flex">
+                    <div class="row chat_msg bg-success text-light p-1 mb-1 rounded-3 d-flex align-items-center img_reverse">
                       <div class="col-auto">
                         <img src="/images/usersAvatars/<%= msgs[i].room.who_created_avatar.user_avatar %>" class="rounded-circle users_avatar_in_msg" alt="users_avatar">
+                        <span class="user_name"><%= msgs[i].room.who_created.user_name %></span>
                       </div>
                       <div class="col-auto">
-                        <strong class="user_name"><%= msgs[i].room.who_created.user_name %></strong>
-                      </div>
-                    </div>
-  
-                    <div class="row position-relative bg-success text-light p-1 pb-3 mb-1 rounded-3 chat_msg">
-                      <div class="position-absolute bottom-0 mb-1 small text-end">
-                        <%= dates[i] %> 
-                      </div>
-                      <div class="col-auto">
-                        <p><%= msgs[i].message_data %></p>
+                        <div>
+                          <%= msgs[i].message_data %>
+                        </div>
+                        <div>
+                          <span class="small"><%= dates[i] %> </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 <% } %>
-  
-              </span>
+
+              </myAjax>
             </div>
           </div>
   
@@ -151,10 +148,10 @@
             <div class="col-12 d-flex flex-column justify-content-center chat_form rounded-bottom">
               <form id="chat_form">
                 <div class="row d-flex justify-content-center align-items-center">
-                  <div class="col-sm-10 col-auto">
+                  <div class="col-sm-10 col-9">
                     <input type="text" class="form-control" id="input_message" placeholder="Написать сообщение">
                   </div>
-                  <div class="col-sm-auto col-auto">
+                  <div class="col-sm-auto col-3">
                     <button class="btn btn-success" type="submit">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.662 512.662" width="20" height="20" style="enable-background:new 0 0 512.662 512.662;" xml:space="preserve">
                         <g>

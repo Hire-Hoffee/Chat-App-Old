@@ -1,4 +1,4 @@
-import { msgsSides } from './scripts.js';
+import { msgsSides, scrollToTop } from './scripts.js';
 
 (function () {
 
@@ -8,28 +8,34 @@ import { msgsSides } from './scripts.js';
   }
 
   async function fetchHandler(e, url) {
-    e.preventDefault();
 
-    const response = await fetch(url);
-    const result = await response.text();
-    
-    history.pushState(null, null, url);
-    const data = result.split('<span id="change_msgs">')[1].split('</span>')[0];
-    const innerBlock = document.getElementById('change_msgs');
-    
-    if (data.trim() == '') {
-      innerBlock.innerHTML = '';
-      innerBlock.innerHTML = `<div class="container d-flex  justify-content-center">
-      <div class="bg-success rounded-3 p-3 mt-5">
-        <strong>Нет сообщений</strong>
-      </div>
-    </div>`;
-    } else {
-      innerBlock.innerHTML = '';
-      innerBlock.innerHTML = data;
+    try {
+      e.preventDefault();
+  
+      const response = await fetch(url);
+      const result = await response.text();
+      
+      history.pushState(null, null, url);
+      const data = result.split('<myAjax id="change_msgs">')[1].split('</myAjax>')[0];
+      const innerBlock = document.getElementById('change_msgs');
+      
+      if (data.trim() == '') {
+        innerBlock.innerHTML = '';
+        innerBlock.innerHTML = `<div class="container d-flex  justify-content-center">
+        <div class="bg-success rounded-3 p-3 mt-5">
+          <strong>Нет сообщений</strong>
+        </div>
+      </div>`;
+      } else {
+        innerBlock.innerHTML = '';
+        innerBlock.innerHTML = data;
+      }
+  
+      msgsSides();
+      scrollToTop();
+    } catch (error) {
+      console.log(error);
     }
-
-    msgsSides();
 
   }
 

@@ -1,5 +1,5 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
-import { msgsSides, findCookie, createMessage } from './scripts.js';
+import { msgsSides, findCookie, createMessage, scrollToTop } from './scripts.js';
 const socket = io();
 
 const chatForm = document.getElementById('chat_form');
@@ -25,7 +25,7 @@ chatForm.addEventListener('submit', (event) => {
   const time_created = new Date(Date.now()).toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'});
 
   if (inputMessage.value) {
-    createMessage('align-items-end', inputMessage.value, userName, time_created, userAvatar);
+    createMessage('justify-content-end', inputMessage.value, userName, time_created, userAvatar, 'flex-row-reverse');
     const saveMsg = {
       message_data: inputMessage.value,
       room: { who_created: userName, who_created_avatar: userName, send_to: roomWith, room_name: chatRoom }
@@ -33,6 +33,7 @@ chatForm.addEventListener('submit', (event) => {
     socket.emit('send_msg:client', saveMsg, chatRoom);
     inputMessage.value = '';
   }
+  scrollToTop();
 });
 
 
@@ -48,8 +49,10 @@ socket.on('send_msg:server', (data) => {
   const time_created = new Date(Date.now()).toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'});
   
   if (data.room.room_name == chatRoom) {
-    createMessage('align-items-start', data.message_data, data.room.who_created, time_created, data.room.who_created_avatar);
+    createMessage('justify-content-start', data.message_data, data.room.who_created, time_created, data.room.who_created_avatar);
   }
+  scrollToTop();
 });
 
+scrollToTop();
 msgsSides();

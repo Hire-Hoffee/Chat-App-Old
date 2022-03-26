@@ -10,14 +10,13 @@ html, body {
   flex: 1 1 auto;
 }
 .msgs_list {
-  height: 75vh;
+  height: 70vh;
 }
 .users_avatar_in_msg {
-  width: 30px;
+  width: 35px;
 }
 .chat_msg {
-  max-width: 400px; 
-  min-width: 150px;
+  max-width: 400px;
 }
 .chat_form {
   height: 10vh;
@@ -32,7 +31,7 @@ html, body {
 .p_chat_link {
   color: #188552;
 }
-.latest_msg, .all_users_link h5 {
+.all_users_link h5 {
   color: #F8F9FA;
 }
 .a_chat_link div:hover, .all_users_link div:hover {
@@ -70,4 +69,7 @@ html, body {
 }
 .btn_hidden {
   background-image: '/images/appImages/arr.png';
+}
+.user_name {
+  display: none;
 }
