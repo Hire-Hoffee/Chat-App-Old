@@ -36,6 +36,9 @@ app.use(multer({ storage: avatarUpload }).single('user_avatar'));
 dbConnection(process.env.MONGO);
 io.on('connection', onSocketConnection);
 
+app.get('/', (req, res) => {
+  res.redirect('/main');
+})
 app.use('/main', mainRoutes);
 app.use('/auth', authRoutes);
 
