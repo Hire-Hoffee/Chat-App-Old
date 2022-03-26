@@ -17,7 +17,7 @@ module.exports = {
 
       const dates = [];
       for (let i = 0; i < msgs.length; i++) {
-        dates.push(msgs[i].time_created.toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}))
+        dates.push(msgs[i].time_created.toLocaleTimeString('ru-RU', {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}))
       }
 
       const users = await User.find({ user_name: [userName, roomWith] });
