@@ -5,7 +5,7 @@ const notFoundHandler = function (req, res, next) {
 }
 
 const errorsHandler = function (err, req, res, next) {
-  console.log(err + '\n');
+  console.log(err);
 
   const status = err.status || 500;
 

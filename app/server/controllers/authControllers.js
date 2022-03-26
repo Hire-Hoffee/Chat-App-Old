@@ -42,7 +42,7 @@ module.exports = {
           user_email: req.body.user_email,
           user_password: req.body.user_password,
           user_name: req.body.user_name,
-          user_avatar: req.file.filename,
+          user_avatar: req.file?.filename,
         }
 
         const findUser = await User.findOne({ user_email: user_data.user_email });
