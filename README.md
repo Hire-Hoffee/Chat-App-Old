@@ -1,5 +1,9 @@
 # Chat App
 
+#### Russian-language [README](https://github.com/Hire-Hoffee/Chat-App/blob/main/README_RU.md).
+
+#### Link to website [ChatTap](https://animearea.herokuapp.com/main/).
+
 <br>
 <div style="text-align:center">
   <img src="./images_readme/main_page.png" width="1000"/>
