@@ -6,8 +6,8 @@
 
 <br>
 <div style="text-align:center">
-  <img src="./images_readme/chat_page.png" width="1000"/>
-  <img src="./images_readme/all_users.png" width="1000"/>
+  <img src="https://i.imgur.com/BHiaPEH.png" width="1000"/>
+  <img src="https://i.imgur.com/Bkeucu0.png" width="1000"/>
 </div>
 <br>
 
@@ -19,7 +19,7 @@ On the site you can correspond with users, registration and authorization are al
 
 <br>
 <div style="text-align:center">
-  <img src="./images_readme/login.png" width="1000"/>
+  <img src="https://i.imgur.com/f7kD5Du.png" width="1000"/>
 </div>
 <br>
 
@@ -33,19 +33,21 @@ On the site you can correspond with users, registration and authorization are al
 ## Technologies used in the development of the site
 
 #### The following frameworks and technologies were used for the frontend part
+
 - HTML/CSS/JS
 - Bootstrap
 
 The site is responsive and is available for comfortable viewing on devices with different screen sizes.
 
 #### The following frameworks and technologies were used for the backend part
+
 - Node.js
 - express.js
 - MongoDB
 
 #### Communication between users is implemented using a persistent connection (WebSocket)
-- SocketIO
 
+- SocketIO
 
 ## Run application
 
