@@ -1,7 +1,5 @@
 # Сайт - мессенджер
 
-#### Ссылка на сайт [ChatTap](https://chattap-app.herokuapp.com).
-
 <br>
 <div style="text-align:center">
   <img src="https://i.imgur.com/BHiaPEH.png" width="1000"/>

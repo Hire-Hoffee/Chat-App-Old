@@ -2,8 +2,6 @@
 
 #### Russian-language [README](https://github.com/Hire-Hoffee/Chat-App/blob/main/README_RU.md).
 
-#### Link to website [ChatTap](https://chattap-app.herokuapp.com).
-
 <br>
 <div style="text-align:center">
   <img src="https://i.imgur.com/BHiaPEH.png" width="1000"/>
