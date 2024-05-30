@@ -9,11 +9,13 @@
 </div>
 <br>
 
-## Website functionality
+## Functionality
 
-This site is a simple chat application.
-
-On the site you can correspond with users, registration and authorization are also implemented.
+- **Registration and Authorization:** Users can register with an email address, username and password, and then log in with saved credentials.
+- **User List:** Registered users can view a list of all other users in the system.
+- **Chat Room Creation:** Users can create chat rooms for private correspondence with another user.
+- **Real-time messaging:** Users in a chat room can exchange real-time text messages using WebSockets.
+- **Avatar Display:** Users can upload avatars to be displayed next to their messages.
 
 <br>
 <div style="text-align:center">
@@ -21,38 +23,42 @@ On the site you can correspond with users, registration and authorization are al
 </div>
 <br>
 
-## Main site pages
+### Technology
 
-- Main page at `/main`
-- All users at `/main/users`
-- Registration page `/auth/sign_up`
-- Login page `/auth/login`
+### Backend
 
-## Technologies used in the development of the site
+Node.js, Express.js, MongoDB, Socket.IO, Bcrypt, JSONWebToken, Multer.
 
-#### The following frameworks and technologies were used for the frontend part
+### Frontend
 
-- HTML/CSS/JS
-- Bootstrap
+HTML, CSS, JavaScript, Bootstrap, EJS, Axios.
 
-The site is responsive and is available for comfortable viewing on devices with different screen sizes.
+### Project Structure
 
-#### The following frameworks and technologies were used for the backend part
+- **app/client:** Contains the client side of the application (HTML, CSS, JavaScript).
+  - **public:** Static files such as images, fonts.
+  - **views:** EJS templates for rendering web pages.
+  - **javascript:** JavaScript files for handling client-side logic.
+- **app/server:** Contains the server side of the application (Node.js, Express.js).
+  - **config:** Configuration files such as database connection, storage configuration.
+  - **controllers:**Controllers that handle routing logic.
+  - **middleware:** Middleware for Express.js used for authentication and error handling.
+  - **models:** Mongoose schemas for user data and messages.
+  - **routes:** Route definitions for Express.js.
+  - **socketHandlers:** Socket.IO event handlers.
 
-- Node.js
-- express.js
-- MongoDB
+## How the project works
 
-#### Communication between users is implemented using a persistent connection (WebSocket)
+1. A user visits the site and can register or log in.
+2. After authorization, the user is shown a list of chat rooms and a list of all users.
+3. The user can select an existing chat room or create a new one by clicking on the username in the list.
+4. When a message is sent by the client, it is sent to the server via Socket.IO.
+5. The server saves the message in the database and sends it to all clients connected to the chat room.
+6. The clients receive the message and display it in the chat room.
 
-- SocketIO
+## Running the application
 
-## Run application
-
-Clone the repository with `git clone` to run the application.
-
-Next, you must create the mongoDB database. To connect to the database, as well as to form the JWT, environment variables are used, you can define them in the `.env` file or set these parameters directly.
-
-Use the `npm init` command to download all packages and modules.
-
-The server is started with the `npm start` command or `npm dev` to start with the `nodemon` package.
+- To run the application clone the repository using `git clone`.
+- Next you must create a mongoDB database To connect to the database as well as to form the JWT use environment variables, you can define them in the `.env` file or set them directly.
+- To load all packages and modules use the `npm init` command.
+- The server is started with the `npm start` command or `npm dev` to start with the `nodemon` package.
